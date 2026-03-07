@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout 
-  title="Contatti" 
+<BaseLayout
+  title="Contatti"
   description="Contatta il Circolo ACLI San Giuseppe di Bellinzago Novarese. Indirizzo, telefono, email e come raggiungerci."
   currentPage="/contatti/"
 >
@@ -11,10 +11,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="page-header">
     <div class="container">
       <span class="page-badge">📬 Contatti</span>
-      <h1>Vieni a<br/><span class="text-highlight">Trovarci</span></h1>
+      <h1>Vieni a<br /><span class="text-highlight">Trovarci</span></h1>
       <p class="page-description">
-        Siamo nel cuore di Bellinzago Novarese. 
-        Passa a trovarci o contattaci per qualsiasi informazione.
+        Siamo nel cuore di Bellinzago Novarese. Passa a trovarci o contattaci
+        per qualsiasi informazione.
       </p>
     </div>
   </section>
@@ -29,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="info-icon">📍</div>
             <div>
               <h3>Indirizzo</h3>
-              <p>Via Roma 15</p>
+              <p>Piazza Beata Rosa Gattorno 7</p>
               <p>28043 Bellinzago Novarese (NO)</p>
             </div>
           </div>
@@ -38,7 +38,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="info-icon">📞</div>
             <div>
               <h3>Telefono</h3>
-              <p><a href="tel:+390321000000">0321 000 000</a></p>
+              <p><a href="tel:+393294227070">+39 329 422 7070</a></p>
             </div>
           </div>
 
@@ -46,7 +46,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="info-icon">📧</div>
             <div>
               <h3>Email</h3>
-              <p><a href="mailto:info@aclibellinzago.it">info@aclibellinzago.it</a></p>
+              <p>
+                <a href="mailto:circoloaclibellinzago@gmail.com"
+                  >circoloaclibellinzago@gmail.com</a
+                >
+              </p>
             </div>
           </div>
 
@@ -54,12 +58,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="info-icon">📱</div>
             <div>
               <h3>Social</h3>
-              <a href="https://www.facebook.com/ACLIBellinzago" target="_blank" rel="noopener noreferrer" class="social-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-                Seguici su Facebook
-              </a>
+              <div class="social-buttons">
+                <a
+                  href="https://www.facebook.com/ACLIBellinzago"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-btn"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                    ></path>
+                  </svg>
+                  Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/aclibellinzago/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-btn social-btn-instagram"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                    ></path>
+                  </svg>
+                  Instagram
+                </a>
+              </div>
             </div>
           </div>
 
@@ -93,8 +129,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <span class="time">17:00 - 02:00</span>
                 </div>
                 <div class="hours-row" style="align-items: flex-end;">
-                  <span class="day" style="align-self: flex-start; margin-top: 5px;">Domenica</span>
-                  <div style="display: flex; flex-direction: column; text-align: right; gap: 4px;">
+                  <span
+                    class="day"
+                    style="align-self: flex-start; margin-top: 5px;"
+                    >Domenica</span
+                  >
+                  <div
+                    style="display: flex; flex-direction: column; text-align: right; gap: 4px;"
+                  >
                     <span class="time">10:00 - 13:00</span>
                     <span class="time">17:00 - 00:00</span>
                   </div>
@@ -109,15 +151,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="map-card card">
             <h3>📍 Dove Siamo</h3>
             <div class="map-wrapper">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11279.15879068428!2d8.612088!3d45.48!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786669d25b272a3%3A0x40f7d6a31e5a000!2sBellinzago%20Novarese%2C%20Province%20of%20Novara%2C%20Italy!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
-                width="100%" 
-                height="400" 
-                style="border:0; border-radius: var(--radius-lg);" 
-                allowfullscreen="" 
-                loading="lazy" 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.9983058058947!2d8.640340776940675!3d45.57047267107591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47865df16380e6a3%3A0xcaea0d81d2afbae!2sCircolo%20Acli%20S.Giuseppe!5e0!3m2!1sen!2sit!4v1772978782920!5m2!1sen!2sit"
+                width="100%"
+                height="450"
+                style="border:0; border-radius: var(--radius-lg);"
+                allowfullscreen=""
+                loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Mappa Circolo ACLI San Giuseppe - Bellinzago Novarese">
+                title="Mappa Circolo ACLI San Giuseppe - Bellinzago Novarese"
+              >
               </iframe>
             </div>
           </div>
@@ -125,11 +168,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="directions-note card">
             <h4>🚗 Come Raggiungerci</h4>
             <p>
-              Il circolo si trova nel centro di Bellinzago Novarese, facilmente raggiungibile 
-              dalla SS32 del Lago Maggiore. Parcheggio disponibile nelle vicinanze.
+              Il circolo si trova nel centro di Bellinzago Novarese, facilmente
+              raggiungibile dalla SS32 del Lago Maggiore. Parcheggio disponibile
+              nelle vicinanze.
             </p>
             <p>
-              <strong>In treno:</strong> Stazione di Bellinzago Novarese (linea Novara-Milano), 
+              <strong>In treno:</strong> Stazione di Bellinzago Novarese (linea Novara-Milano),
               a 5 minuti a piedi dal circolo.
             </p>
           </div>
@@ -141,7 +185,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <style>
   .page-header {
-    background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 50%, #3D2415 100%);
+    background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 50%, #3d2415 100%);
     padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
     text-align: center;
     position: relative;
@@ -149,12 +193,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .page-header::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     opacity: 0.03;
-    background-image: 
-      radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+    background-image: radial-gradient(
+        circle at 25% 25%,
+        white 1px,
+        transparent 1px
+      ),
       radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
     background-size: 50px 50px;
   }
@@ -177,7 +224,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .text-highlight {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-primary-light)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -235,12 +286,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: var(--text-sm);
   }
 
+  .social-buttons {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
   .social-btn {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-4);
-    background: #1877F2;
+    background: #1877f2;
     color: white !important;
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
@@ -249,9 +306,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .social-btn:hover {
-    background: #0E5FC0;
+    background: #0e5fc0;
     transform: translateY(-1px);
     color: white;
+  }
+
+  .social-btn-instagram {
+    background: linear-gradient(
+      45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888
+    );
+  }
+
+  .social-btn-instagram:hover {
+    background: linear-gradient(
+      45deg,
+      #e08323,
+      #d5572c,
+      #cb1633,
+      #bb1256,
+      #ab0778
+    );
   }
 
   .hours-table {

@@ -1,33 +1,68 @@
 {
   "members": [
     {
-      "name": "Mario Rossi",
+      "name": "Gianluca Miglio",
       "role": "Presidente",
       "description": "Alla guida del circolo dal 2018, Mario si dedica con passione alla vita comunitaria di Bellinzago."
     },
     {
-      "name": "Anna Bianchi",
+      "name": "Marco Grano",
       "role": "Vice Presidente",
       "description": "Punto di riferimento per le attività culturali e ricreative del circolo."
     },
     {
-      "name": "Giuseppe Verdi",
-      "role": "Segretario",
+      "name": "Alessia Botta",
+      "role": "Segretario e gestore",
       "description": "Si occupa dell'organizzazione e della comunicazione del circolo."
     },
     {
-      "name": "Lucia Ferrari",
+      "name": "Lorenzo Bianchi",
       "role": "Tesoriere",
       "description": "Gestisce con precisione le risorse economiche del circolo."
     },
     {
-      "name": "Roberto Colombo",
+      "name": "Carlo Cerutti",
       "role": "Consigliere",
       "description": "Responsabile degli eventi sportivi e delle attività ricreative."
     },
     {
-      "name": "Francesca Ricci",
+      "name": "Edoardo Garavaglia",
       "role": "Consigliere",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    },
+    {
+      "name": "Giulio Gavinelli",
+      "role": "Consigliere",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    },
+    {
+      "name": "Simone Miglio",
+      "role": "Gestore",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    },
+    {
+      "name": "Tatsiana Bulanava",
+      "role": "Gestore",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    },
+    {
+      "name": "Anna Miglio",
+      "role": "Aperitivista",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    },
+    {
+      "name": "Elisa Verzotti",
+      "role": "Aperitivista",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    },
+    {
+      "name": "Gabriele Guiglia",
+      "role": "Aperitivista",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    },
+    {
+      "name": "Irene Cominotti",
+      "role": "Aperitivista",
       "description": "Coordina il volontariato e le iniziative solidali del circolo."
     }
   ]

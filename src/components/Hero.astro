@@ -41,7 +41,8 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
           <strong>Sabato</strong>
           <span>17:00 - 02:00</span>
           <strong style="margin-top: 4px;">Domenica</strong>
-          <span>10:00 - 13:00 / 17:00 - 00:00</span>
+          <span>10:00 - 13:00</span>
+          <span>17:00 - 00:00</span>
         </div>
       </div>
       <div class="hero-info-divider"></div>
@@ -49,7 +50,7 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
         <span class="info-icon">📞</span>
         <div>
           <strong>Telefono</strong>
-          <span>0321 000 000</span>
+          <a href="tel:+393294227070" class="hero-phone">+39 329 422 7070</a>
         </div>
       </div>
     </div>
@@ -173,6 +174,17 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
     margin: 0 auto;
   }
 
+  .hero-phone {
+    color: rgba(245, 237, 230, 0.6);
+    text-decoration: none;
+    font-size: var(--text-xs);
+    transition: color var(--transition-fast);
+  }
+
+  .hero-phone:hover {
+    color: var(--color-primary-light);
+  }
+
   .hero-info-item {
     display: flex;
     align-items: center;
@@ -219,6 +231,12 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
       flex-direction: column;
       gap: var(--space-4);
       padding: var(--space-5);
+      max-width: 320px;
+    }
+
+    .hero-info-item {
+      width: 100%;
+      justify-content: center;
     }
 
     .hero-info-divider {
@@ -230,6 +248,14 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
   @media (max-width: 480px) {
     .hero-title {
       font-size: var(--text-3xl);
+    }
+    .hero-cta {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0 var(--space-4);
+    }
+    .hero-cta .btn-primary, .hero-cta .btn-outline {
+      width: 100%;
     }
   }
 </style>
