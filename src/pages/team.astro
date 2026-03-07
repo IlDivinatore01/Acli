@@ -2,6 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TeamMember from '../components/TeamMember.astro';
 import teamData from '../data/team.json';
+
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 ---
 
 <BaseLayout 
@@ -48,7 +51,7 @@ import teamData from '../data/team.json';
           voglia di contribuire alla vita della comunità. Se vuoi 
           dare una mano, contattaci!
         </p>
-        <a href={`${import.meta.env.BASE_URL}contatti/`} class="btn btn-primary">Contattaci</a>
+        <a href={`${base}contatti/`} class="btn btn-primary">Contattaci</a>
       </div>
     </div>
   </section>
