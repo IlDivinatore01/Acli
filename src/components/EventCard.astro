@@ -1,0 +1,354 @@
+---
+interface Props {
+  name: string;
+  date: string;
+  icon: string;
+  description: string;
+  tags: string[];
+  registrationStart?: string;
+  registrationEnd?: string;
+  prices?: { label: string; amount: string }[];
+  deposit?: string;
+  flyers?: string[];
+}
+
+const { name, date, icon, description, tags, registrationStart, registrationEnd, prices, deposit, flyers } = Astro.props;
+const base = (() => {
+  const raw = import.meta.env.BASE_URL;
+  return raw.endsWith('/') ? raw : raw + '/';
+})();
+const flyerSrcs = flyers?.map(f => `${base}${f.startsWith('/') ? f.slice(1) : f}`) ?? [];
+const hasFlyers = flyerSrcs.length > 0;
+const hasMultipleFlyers = flyerSrcs.length > 1;
+const hasRegistration = registrationStart || registrationEnd;
+const cardId = `event-${name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+---
+
+<div class="event-card card" id={cardId}>
+  {hasFlyers && (
+    <button class="event-flyer" data-flyers={JSON.stringify(flyerSrcs)} data-event-name={name} aria-label={`Apri locandina ${name}`}>
+      <img src={flyerSrcs[0]} alt={`Locandina ${name}`} loading="lazy" />
+      <div class="flyer-overlay">
+        <span class="flyer-zoom">
+          {hasMultipleFlyers ? `🖼️ ${flyerSrcs.length} locandine` : '🔍 Vedi locandina'}
+        </span>
+      </div>
+      {hasMultipleFlyers && (
+        <span class="flyer-count">{flyerSrcs.length}</span>
+      )}
+    </button>
+  )}
+  <div class="event-body">
+    <div class="event-header">
+      <span class="event-icon">{icon}</span>
+      <div class="event-date-badge">
+        <span class="event-date">{date}</span>
+      </div>
+    </div>
+    <h3 class="event-name">{name}</h3>
+    <p class="event-description">{description}</p>
+    
+    {hasRegistration && (
+      <div class="event-registration">
+        <span class="registration-label">📋 Iscrizioni</span>
+        <div class="registration-dates">
+          {registrationStart && (
+            <span class="reg-date">
+              <span class="reg-prefix">Da:</span> {registrationStart}
+            </span>
+          )}
+          {registrationEnd && (
+            <span class="reg-date">
+              <span class="reg-prefix">Entro:</span> {registrationEnd}
+            </span>
+          )}
+        </div>
+      </div>
+    )}
+
+    {(prices || deposit) && (
+      <div class="event-pricing">
+        <span class="pricing-label">💶 Costi e Info</span>
+        <div class="pricing-list">
+          {prices?.map(price => (
+            <div class="price-item">
+              <span class="price-desc">{price.label}</span>
+              <span class="price-amount">{price.amount}</span>
+            </div>
+          ))}
+          {deposit && (
+            <div class="deposit-item">
+              <span class="deposit-label">Caparra:</span>
+              <span class="deposit-amount">{deposit}</span>
+            </div>
+          )}
+        </div>
+      </div>
+    )}
+
+    <div class="event-tags">
+      {tags.map((tag) => (
+        <span class="event-tag">{tag}</span>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .event-card {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    z-index: 1;
+  }
+
+  /* Flyer */
+  .event-flyer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border: none;
+    padding: 0;
+    background: var(--color-bg-dark);
+    display: block;
+  }
+
+  .event-flyer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .event-card:hover .event-flyer img {
+    transform: scale(1.05);
+  }
+
+  .flyer-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 40%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: var(--space-3);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .event-card:hover .flyer-overlay {
+    opacity: 1;
+  }
+
+  .flyer-zoom {
+    font-size: var(--text-xs);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(4px);
+  }
+
+  .flyer-count {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    background: var(--color-primary);
+    color: white;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  /* Body */
+  .event-body {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .event-card:not(:has(.event-flyer)) .event-body {
+    padding-top: calc(var(--space-6) + 4px);
+  }
+
+  .event-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+  }
+
+  .event-icon {
+    font-size: 2.5rem;
+  }
+
+  .event-date-badge {
+    padding: var(--space-1) var(--space-4);
+    background: linear-gradient(135deg, rgba(200, 135, 43, 0.1), rgba(200, 135, 43, 0.05));
+    border: 1px solid rgba(200, 135, 43, 0.2);
+    border-radius: var(--radius-full);
+  }
+
+  .event-date {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .event-name {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+  }
+
+  .event-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: var(--space-4);
+  }
+
+  /* Registration */
+  .event-registration {
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-bg-warm);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .registration-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: var(--space-1);
+  }
+
+  .registration-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .reg-date {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .reg-prefix {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* Pricing */
+  .event-pricing {
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-bg-warm);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-primary);
+    margin-bottom: var(--space-4);
+  }
+
+  .pricing-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: var(--space-2);
+  }
+
+  .pricing-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price-desc {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .price-amount {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .deposit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-1);
+    padding-top: var(--space-1);
+    border-top: 1px dashed rgba(0,0,0,0.1);
+  }
+
+  :global([data-theme="dark"]) .deposit-item {
+    border-top-color: rgba(255,255,255,0.1);
+  }
+
+  .deposit-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .deposit-amount {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* Tags */
+  .event-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .event-tag {
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-bg-warm);
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-accent);
+    letter-spacing: 0.02em;
+  }
+</style>

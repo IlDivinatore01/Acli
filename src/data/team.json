@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "name": "Mario Rossi",
+      "role": "Presidente",
+      "description": "Alla guida del circolo dal 2018, Mario si dedica con passione alla vita comunitaria di Bellinzago."
+    },
+    {
+      "name": "Anna Bianchi",
+      "role": "Vice Presidente",
+      "description": "Punto di riferimento per le attività culturali e ricreative del circolo."
+    },
+    {
+      "name": "Giuseppe Verdi",
+      "role": "Segretario",
+      "description": "Si occupa dell'organizzazione e della comunicazione del circolo."
+    },
+    {
+      "name": "Lucia Ferrari",
+      "role": "Tesoriere",
+      "description": "Gestisce con precisione le risorse economiche del circolo."
+    },
+    {
+      "name": "Roberto Colombo",
+      "role": "Consigliere",
+      "description": "Responsabile degli eventi sportivi e delle attività ricreative."
+    },
+    {
+      "name": "Francesca Ricci",
+      "role": "Consigliere",
+      "description": "Coordina il volontariato e le iniziative solidali del circolo."
+    }
+  ]
+}

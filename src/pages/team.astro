@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TeamMember from '../components/TeamMember.astro';
+import teamData from '../data/team.json';
+---
+
+<BaseLayout 
+  title="Il Team" 
+  description="Conosci il consiglio direttivo del Circolo ACLI San Giuseppe di Bellinzago Novarese."
+  currentPage="/team/"
+>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-badge">👥 Il Nostro Team</span>
+      <h1>Il Consiglio<br/><span class="text-highlight">Direttivo</span></h1>
+      <p class="page-description">
+        Le persone che con dedizione e passione mandano avanti 
+        il nostro amato circolo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="team-grid">
+        {teamData.members.map((member, i) => (
+          <TeamMember 
+            name={member.name} 
+            role={member.role} 
+            description={member.description}
+            index={i}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section class="join-section">
+    <div class="container">
+      <div class="join-content card">
+        <div class="join-icon">❤️</div>
+        <h2>Vuoi far parte della squadra?</h2>
+        <p>
+          Il circolo è sempre alla ricerca di volontari e persone con 
+          voglia di contribuire alla vita della comunità. Se vuoi 
+          dare una mano, contattaci!
+        </p>
+        <a href={`${import.meta.env.BASE_URL}contatti/`} class="btn btn-primary">Contattaci</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 50%, #3D2415 100%);
+    padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: 
+      radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .page-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-5);
+    background: rgba(200, 135, 43, 0.15);
+    border: 1px solid rgba(200, 135, 43, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-4);
+    position: relative;
+  }
+
+  .text-highlight {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+
+  .page-description {
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+
+  .join-section {
+    padding: var(--space-8) 0;
+  }
+
+  .join-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-8);
+    background: var(--color-bg-warm);
+    border: 2px solid var(--color-primary-light);
+  }
+
+  .join-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .join-content h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .join-content p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

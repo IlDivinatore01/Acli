@@ -1,0 +1,235 @@
+---
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+---
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-pattern"></div>
+  </div>
+  <div class="hero-content container">
+    <div class="hero-badge animate-fade-in-up">
+      <span>📍 Bellinzago Novarese</span>
+    </div>
+    <h1 class="hero-title animate-fade-in-up stagger-1">
+      Circolo ACLI<br/>
+      <span class="hero-highlight">"San Giuseppe"</span>
+    </h1>
+    <p class="hero-subtitle animate-fade-in-up stagger-2">
+      Un luogo dove vivere il tempo libero.<br/>
+      Tradizione, comunità e convivialità dal cuore del Piemonte.
+    </p>
+    <div class="hero-cta animate-fade-in-up stagger-3">
+      <a href={`${base}menu/`} class="btn btn-primary">Scopri il Menu</a>
+      <a href={`${base}contatti/`} class="btn btn-outline">Contattaci</a>
+    </div>
+    <div class="hero-info animate-fade-in-up stagger-4">
+      <div class="hero-info-item" style="align-items: flex-start;">
+        <span class="info-icon" style="margin-top: 2px;">🕐</span>
+        <div style="gap: 2px;">
+          <strong>Mer - Gio</strong>
+          <span>20:30 - 00:30</span>
+          <strong style="margin-top: 4px;">Venerdì</strong>
+          <span>20:30 - 02:00</span>
+        </div>
+      </div>
+      <div class="hero-info-divider" style="height: auto; align-self: stretch;"></div>
+      <div class="hero-info-item" style="align-items: flex-start;">
+        <span class="info-icon" style="margin-top: 2px;">🕐</span>
+        <div style="gap: 2px;">
+          <strong>Sabato</strong>
+          <span>17:00 - 02:00</span>
+          <strong style="margin-top: 4px;">Domenica</strong>
+          <span>10:00 - 13:00 / 17:00 - 00:00</span>
+        </div>
+      </div>
+      <div class="hero-info-divider"></div>
+      <div class="hero-info-item">
+        <span class="info-icon">📞</span>
+        <div>
+          <strong>Telefono</strong>
+          <span>0321 000 000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(135deg, #2C1810 0%, #4A2C1A 30%, #3D2415 60%, #1A1410 100%);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(200, 135, 43, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(200, 135, 43, 0.1) 0%, transparent 50%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: 
+      radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: calc(var(--nav-height) + var(--space-12)) 0 var(--space-12);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-5);
+    background: rgba(200, 135, 43, 0.15);
+    border: 1px solid rgba(200, 135, 43, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-8);
+  }
+
+  .hero-title {
+    font-size: var(--text-6xl);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-highlight {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-xl);
+    color: rgba(245, 237, 230, 0.7);
+    max-width: 600px;
+    margin: 0 auto var(--space-10);
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-16);
+  }
+
+  .hero-cta .btn-primary {
+    font-size: var(--text-base);
+    padding: var(--space-4) var(--space-10);
+  }
+
+  .hero-cta .btn-outline {
+    font-size: var(--text-base);
+    padding: var(--space-4) var(--space-10);
+    color: var(--color-text-light);
+    border-color: rgba(245, 237, 230, 0.3);
+  }
+
+  .hero-cta .btn-outline:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+
+  .hero-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-6) var(--space-8);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-2xl);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-info-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .info-icon {
+    font-size: 1.4rem;
+  }
+
+  .hero-info-item div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .hero-info-item strong {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .hero-info-item span {
+    color: rgba(245, 237, 230, 0.6);
+    font-size: var(--text-xs);
+  }
+
+  .hero-info-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: var(--text-4xl);
+    }
+
+    .hero-subtitle {
+      font-size: var(--text-lg);
+    }
+
+    .hero-info {
+      flex-direction: column;
+      gap: var(--space-4);
+      padding: var(--space-5);
+    }
+
+    .hero-info-divider {
+      width: 60%;
+      height: 1px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: var(--text-3xl);
+    }
+  }
+</style>

@@ -1,0 +1,88 @@
+{
+  "categories": [
+    {
+      "name": "Caffetteria",
+      "icon": "☕",
+      "items": [
+        { "name": "Caffè Espresso", "price": "1.10" },
+        { "name": "Caffè Decaffeinato", "price": "1.20" },
+        { "name": "Caffè Macchiato", "price": "1.30" },
+        { "name": "Caffè Corretto", "price": "1.80" },
+        { "name": "Cappuccino", "price": "1.50" },
+        { "name": "Latte Macchiato", "price": "1.60" },
+        { "name": "Cioccolata Calda", "price": "2.50" },
+        { "name": "Tè / Tisane", "price": "2.00" }
+      ]
+    },
+    {
+      "name": "Birre alla Spina",
+      "icon": "🍺",
+      "items": [
+        { "name": "Birra Piccola (20cl)", "price": "2.00" },
+        { "name": "Birra Media (40cl)", "price": "3.50" },
+        { "name": "Birra Grande (50cl)", "price": "4.50" }
+      ]
+    },
+    {
+      "name": "Birre in Bottiglia",
+      "icon": "🍻",
+      "items": [
+        { "name": "Moretti (33cl)", "price": "3.00" },
+        { "name": "Peroni (33cl)", "price": "3.00" },
+        { "name": "Corona (33cl)", "price": "4.00" },
+        { "name": "Heineken (33cl)", "price": "3.50" },
+        { "name": "Ceres (33cl)", "price": "4.00" }
+      ]
+    },
+    {
+      "name": "Vini",
+      "icon": "🍷",
+      "items": [
+        { "name": "Calice di Rosso della Casa", "price": "2.50" },
+        { "name": "Calice di Bianco della Casa", "price": "2.50" },
+        { "name": "Bottiglia Rosso della Casa", "price": "10.00" },
+        { "name": "Bottiglia Bianco della Casa", "price": "10.00" },
+        { "name": "Prosecco (calice)", "price": "3.00" },
+        { "name": "Spritz Aperol", "price": "3.50" },
+        { "name": "Spritz Campari", "price": "3.50" }
+      ]
+    },
+    {
+      "name": "Cocktail & Aperitivi",
+      "icon": "🍹",
+      "items": [
+        { "name": "Negroni", "price": "5.00" },
+        { "name": "Americano", "price": "4.50" },
+        { "name": "Gin Tonic", "price": "5.00" },
+        { "name": "Moscow Mule", "price": "5.50" },
+        { "name": "Campari Soda", "price": "3.00" },
+        { "name": "Crodino", "price": "2.50" },
+        { "name": "Bitter Analcolico", "price": "2.50" }
+      ]
+    },
+    {
+      "name": "Analcolici",
+      "icon": "🥤",
+      "items": [
+        { "name": "Coca Cola / Fanta / Sprite", "price": "2.50" },
+        { "name": "Succo di Frutta", "price": "2.50" },
+        { "name": "Acqua Naturale (50cl)", "price": "1.00" },
+        { "name": "Acqua Frizzante (50cl)", "price": "1.00" },
+        { "name": "Red Bull", "price": "3.50" },
+        { "name": "Chinotto", "price": "2.50" }
+      ]
+    },
+    {
+      "name": "Stuzzicheria",
+      "icon": "🥜",
+      "items": [
+        { "name": "Patatine", "price": "2.00" },
+        { "name": "Noccioline", "price": "2.00" },
+        { "name": "Olive", "price": "2.50" },
+        { "name": "Tagliere Salumi e Formaggi", "price": "8.00" },
+        { "name": "Toast Prosciutto e Formaggio", "price": "3.00" },
+        { "name": "Panino Farcito", "price": "4.00" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+---
+
+<BaseLayout title="Home" currentPage="/">
+  <Hero />
+
+  <!-- Welcome Section -->
+  <section class="section welcome-section">
+    <div class="container">
+      <h2 class="section-title">Benvenuti al Circolo</h2>
+      <p class="section-subtitle">
+        Da oltre 50 anni, un punto di riferimento per la comunità di Bellinzago Novarese.
+      </p>
+      <div class="welcome-grid">
+        <div class="welcome-card card">
+          <div class="welcome-icon">☕</div>
+          <h3>Bar & Caffetteria</h3>
+          <p>Inizia la giornata con un espresso perfetto o goditi un aperitivo in compagnia.</p>
+          <a href={`${base}menu/`} class="card-link">Scopri il menu →</a>
+        </div>
+        <div class="welcome-card card">
+          <div class="welcome-icon">🎯</div>
+          <h3>Attività & Eventi</h3>
+          <p>Tornei di carte, serate a tema, eventi culturali e tanto altro per tutti.</p>
+          <a href={`${base}eventi/`} class="card-link">I nostri eventi →</a>
+        </div>
+        <div class="welcome-card card">
+          <div class="welcome-icon">🤝</div>
+          <h3>Comunità</h3>
+          <p>Un luogo di incontro dove coltivare amicizie e il senso di appartenenza.</p>
+          <a href={`${base}storia/`} class="card-link">La nostra storia →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Vieni a trovarci!</h2>
+        <p>Il circolo è aperto a tutti. Passa a fare un saluto, bere un caffè o semplicemente a goderti un momento di relax.</p>
+        <div class="cta-buttons">
+          <a href={`${base}contatti/`} class="btn btn-primary">Come raggiungerci</a>
+          <a href={`${base}team/`} class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.4);">Il nostro team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .welcome-section {
+    background: var(--color-bg-warm);
+  }
+
+  .welcome-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+
+  .welcome-card {
+    text-align: center;
+    padding: var(--space-10) var(--space-6);
+  }
+
+  .welcome-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .welcome-card h3 {
+    margin-bottom: var(--space-3);
+  }
+
+  .welcome-card p {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+  }
+
+  .card-link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .card-link:hover {
+    color: var(--color-primary-dark);
+    letter-spacing: 0.02em;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 50%, #3D2415 100%);
+    padding: var(--space-20) 0;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-content p {
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+    line-height: 1.8;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .welcome-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+  }
+</style>

@@ -1,0 +1,384 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EventCard from '../components/EventCard.astro';
+import eventsData from '../data/events.json';
+---
+
+<BaseLayout 
+  title="Eventi" 
+  description="Scopri tutti gli eventi del Circolo ACLI San Giuseppe: feste, degustazioni, tornei, serate a tema e tanto altro."
+  currentPage="/eventi/"
+>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-badge">🎉 I Nostri Eventi</span>
+      <h1>Calendario<br/><span class="text-highlight">Eventi</span></h1>
+      <p class="page-description">
+        Il circolo è sempre in movimento! Scopri tutti gli eventi 
+        e le iniziative che organizziamo durante l'anno.
+      </p>
+    </div>
+  </section>
+
+  <!-- Events Grid -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">I Prossimi Appuntamenti</h2>
+      <p class="section-subtitle">
+        Feste, degustazioni, tornei e serate a tema per tutti i gusti. Non perderti neanche un evento!
+      </p>
+      <div class="events-grid">
+        {eventsData.events.map((event) => (
+          <EventCard 
+            name={event.name}
+            date={event.date}
+            icon={event.icon}
+            description={event.description}
+            tags={event.tags}
+            registrationStart={event.registrationStart}
+            registrationEnd={event.registrationEnd}
+            prices={event.prices}
+            deposit={event.deposit}
+            flyers={event.flyers}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="events-cta">
+    <div class="container">
+      <div class="cta-box card">
+        <div class="cta-icon">📱</div>
+        <h2>Resta aggiornato!</h2>
+        <p>
+          Segui la nostra pagina Facebook per non perderti nessun evento, 
+          aggiornamenti dell'ultimo minuto e foto delle serate!
+        </p>
+        <a href="https://www.facebook.com/ACLIBellinzago" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 4px;">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          Seguici su Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore locandina">
+    <button class="lb-close" id="lb-close" aria-label="Chiudi">&times;</button>
+    <div class="lb-content">
+      <button class="lb-nav lb-prev" id="lb-prev" aria-label="Precedente">‹</button>
+      <div class="lb-image-wrap">
+        <img class="lb-image" id="lb-image" src="" alt="" />
+      </div>
+      <button class="lb-nav lb-next" id="lb-next" aria-label="Successiva">›</button>
+    </div>
+    <div class="lb-info">
+      <span class="lb-title" id="lb-title"></span>
+      <span class="lb-counter" id="lb-counter"></span>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 50%, #3D2415 100%);
+    padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: 
+      radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .page-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-5);
+    background: rgba(200, 135, 43, 0.15);
+    border: 1px solid rgba(200, 135, 43, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-4);
+    position: relative;
+  }
+
+  .text-highlight {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+
+  .page-description {
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  .events-cta {
+    padding: var(--space-8) 0;
+  }
+
+  .cta-box {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-10) var(--space-8);
+    background: var(--color-bg-warm);
+    border: 2px solid var(--color-primary-light);
+  }
+
+  .cta-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .cta-box h2 {
+    margin-bottom: var(--space-3);
+  }
+
+  .cta-box p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+    line-height: 1.8;
+  }
+
+  /* === LIGHTBOX === */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: lbFadeIn 0.2s ease;
+  }
+
+  .lightbox.open {
+    display: flex;
+  }
+
+  @keyframes lbFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .lb-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    padding: 8px;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .lb-close:hover {
+    color: white;
+  }
+
+  .lb-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    max-width: 90vw;
+    max-height: 80vh;
+    position: relative;
+  }
+
+  .lb-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+
+  .lb-image {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+    user-select: none;
+  }
+
+  .lb-nav {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .lb-nav:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  .lb-nav.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .lb-info {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .lb-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+  }
+
+  .lb-counter {
+    font-size: 0.8rem;
+    background: rgba(255,255,255,0.1);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .lb-counter.hidden {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .events-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .lb-nav {
+      width: 36px;
+      height: 36px;
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  // Lightbox controller
+  const lightbox = document.getElementById('lightbox');
+  const lbImage = document.getElementById('lb-image') as HTMLImageElement;
+  const lbTitle = document.getElementById('lb-title')!;
+  const lbCounter = document.getElementById('lb-counter')!;
+  const lbPrev = document.getElementById('lb-prev')!;
+  const lbNext = document.getElementById('lb-next')!;
+  const lbClose = document.getElementById('lb-close')!;
+
+  let currentFlyers: string[] = [];
+  let currentIndex = 0;
+
+  function showImage(index: number) {
+    currentIndex = index;
+    lbImage.src = currentFlyers[index];
+
+    // Nav visibility
+    lbPrev.classList.toggle('hidden', currentFlyers.length <= 1 || index === 0);
+    lbNext.classList.toggle('hidden', currentFlyers.length <= 1 || index === currentFlyers.length - 1);
+
+    // Counter
+    if (currentFlyers.length > 1) {
+      lbCounter.textContent = `${index + 1} / ${currentFlyers.length}`;
+      lbCounter.classList.remove('hidden');
+    } else {
+      lbCounter.classList.add('hidden');
+    }
+  }
+
+  function openLightbox(flyers: string[], eventName: string) {
+    currentFlyers = flyers;
+    lbTitle.textContent = eventName;
+    showImage(0);
+    lightbox?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox?.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImage.src = '';
+  }
+
+  // Bind all flyer buttons
+  document.querySelectorAll<HTMLButtonElement>('.event-flyer[data-flyers]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const flyers = JSON.parse(btn.dataset.flyers || '[]');
+      const name = btn.dataset.eventName || '';
+      openLightbox(flyers, name);
+    });
+  });
+
+  // Close
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Nav
+  lbPrev.addEventListener('click', () => showImage(currentIndex - 1));
+  lbNext.addEventListener('click', () => showImage(currentIndex + 1));
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox?.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft' && currentIndex > 0) showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight' && currentIndex < currentFlyers.length - 1) showImage(currentIndex + 1);
+  });
+</script>

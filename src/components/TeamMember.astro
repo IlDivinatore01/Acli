@@ -1,0 +1,84 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  description: string;
+  index: number;
+}
+
+const { name, role, description, index } = Astro.props;
+
+const initials = name.split(' ').map(n => n[0]).join('');
+const colors = ['#C8872B', '#8B4513', '#A0522D', '#6B4226', '#D4A03C', '#7D5A3C'];
+const bgColor = colors[index % colors.length];
+---
+
+<div class="team-card card">
+  <div class="member-avatar" style={`background-color: ${bgColor}`}>
+    <span class="avatar-initials">{initials}</span>
+  </div>
+  <h3 class="member-name">{name}</h3>
+  <span class="member-role">{role}</span>
+  <p class="member-description">{description}</p>
+</div>
+
+<style>
+  .team-card {
+    text-align: center;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .member-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-5);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  .member-avatar::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary-light);
+    opacity: 0.4;
+  }
+
+  .avatar-initials {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+
+  .member-name {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-1);
+  }
+
+  .member-role {
+    display: inline-block;
+    padding: var(--space-1) var(--space-4);
+    background: linear-gradient(135deg, rgba(200, 135, 43, 0.1), rgba(200, 135, 43, 0.05));
+    border: 1px solid rgba(200, 135, 43, 0.2);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .member-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+</style>

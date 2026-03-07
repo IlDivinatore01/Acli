@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
+
+const events = [
+  {
+    year: "1968",
+    title: "La Fondazione",
+    description: "Nasce il Circolo ACLI \"San Giuseppe\" a Bellinzago Novarese, voluto da un gruppo di lavoratori e volontari cattolici con l'obiettivo di creare un luogo di aggregazione per la comunità."
+  },
+  {
+    year: "1975",
+    title: "La Nuova Sede",
+    description: "Il circolo si trasferisce nella sede attuale in Via Roma, con spazi più ampi per ospitare le crescenti attività ricreative e culturali."
+  },
+  {
+    year: "1985",
+    title: "Anni di Crescita",
+    description: "Il circolo diventa punto di riferimento per la comunità bellinzaghese: tornei di carte, feste patronali e iniziative solidali caratterizzano questo periodo."
+  },
+  {
+    year: "1995",
+    title: "Rinnovamento del Bar",
+    description: "Viene completamente rinnovato il bar e la sala principale, rendendo il circolo più accogliente e moderno pur mantenendo il suo spirito tradizionale."
+  },
+  {
+    year: "2005",
+    title: "40 Anni Insieme",
+    description: "Grande festa per i 40 anni del circolo con tutta la comunità. Un momento per celebrare la storia e guardare al futuro con ottimismo."
+  },
+  {
+    year: "2015",
+    title: "L'Era Digitale",
+    description: "Il circolo approda sui social media con la pagina Facebook, raggiungendo sempre più persone e promuovendo eventi e attività online."
+  },
+  {
+    year: "Oggi",
+    title: "Un Futuro di Comunità",
+    description: "Oltre 50 anni di storia non ci fermano: il Circolo ACLI San Giuseppe continua a essere il cuore pulsante della vita sociale di Bellinzago Novarese."
+  }
+];
+---
+
+<BaseLayout 
+  title="La Nostra Storia" 
+  description="Scopri la storia del Circolo ACLI San Giuseppe di Bellinzago Novarese, dal 1968 ad oggi."
+  currentPage="/storia/"
+>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-badge">📜 La Nostra Storia</span>
+      <h1>Una Storia di<br/><span class="text-highlight">Comunità</span></h1>
+      <p class="page-description">
+        Oltre 50 anni di tradizione, amicizia e impegno sociale 
+        nel cuore di Bellinzago Novarese.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="storia-intro">
+        <div class="intro-content">
+          <h2>Chi Siamo</h2>
+          <p>
+            Il <strong>Circolo ACLI "San Giuseppe"</strong> è un'associazione di promozione sociale 
+            che fa parte delle <strong>ACLI</strong> (Associazioni Cristiane Lavoratori Italiani). 
+            Dal 1968 siamo un punto di riferimento per la comunità di Bellinzago Novarese, 
+            offrendo un luogo accogliente dove trascorrere il tempo libero, socializzare e 
+            partecipare a iniziative culturali e ricreative.
+          </p>
+          <p>
+            Il nostro circolo è aperto a tutti: famiglie, giovani, anziani. 
+            Crediamo nella forza della comunità e nell'importanza di avere 
+            spazi dove le persone possano incontrarsi e condividere momenti insieme.
+          </p>
+        </div>
+        <div class="intro-stats">
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Anni di storia</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2000+</span>
+            <span class="stat-label">Soci e amici</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">365</span>
+            <span class="stat-label">Giorni di attività</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section timeline-section">
+    <div class="container">
+      <h2 class="section-title">Il Nostro Percorso</h2>
+      <p class="section-subtitle">
+        Ripercorri con noi le tappe fondamentali della nostra storia.
+      </p>
+      <Timeline events={events} />
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">I Nostri Valori</h2>
+      <p class="section-subtitle">
+        I principi che guidano le nostre attività da oltre mezzo secolo.
+      </p>
+      <div class="values-grid">
+        <div class="value-card card">
+          <div class="value-icon">🤝</div>
+          <h3>Solidarietà</h3>
+          <p>Ci impegniamo per il bene comune e per sostenere chi ha bisogno nella nostra comunità.</p>
+        </div>
+        <div class="value-card card">
+          <div class="value-icon">👨‍👩‍👧‍👦</div>
+          <h3>Famiglia</h3>
+          <p>Il circolo è un luogo per tutti: un'estensione della famiglia, dove ognuno è benvenuto.</p>
+        </div>
+        <div class="value-card card">
+          <div class="value-icon">🌱</div>
+          <h3>Tradizione</h3>
+          <p>Preserviamo le tradizioni del nostro territorio, valorizzando la cultura e l'identità locale.</p>
+        </div>
+        <div class="value-card card">
+          <div class="value-icon">🎉</div>
+          <h3>Convivialità</h3>
+          <p>Crediamo nella gioia dello stare insieme, nel divertimento sano e nella buona compagnia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 50%, #3D2415 100%);
+    padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: 
+      radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .page-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-5);
+    background: rgba(200, 135, 43, 0.15);
+    border: 1px solid rgba(200, 135, 43, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-4);
+    position: relative;
+  }
+
+  .text-highlight {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+
+  .page-description {
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .storia-intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+  }
+
+  .intro-content h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .intro-content p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+    line-height: 1.8;
+  }
+
+  .intro-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-5);
+    background: var(--color-bg-warm);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+
+  .timeline-section {
+    background: var(--color-bg-warm);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  .value-card {
+    text-align: center;
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .value-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .value-card h3 {
+    margin-bottom: var(--space-2);
+    font-size: var(--text-lg);
+  }
+
+  .value-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .storia-intro {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+
+    .intro-stats {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intro-stats {
+      flex-direction: column;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

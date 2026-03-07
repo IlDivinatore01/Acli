@@ -1,0 +1,86 @@
+---
+interface Props {
+  name: string;
+  icon: string;
+  items: { name: string; price: string }[];
+}
+
+const { name, icon, items } = Astro.props;
+---
+
+<div class="menu-category card">
+  <div class="category-header">
+    <span class="category-icon">{icon}</span>
+    <h3 class="category-name">{name}</h3>
+  </div>
+  <ul class="menu-items">
+    {items.map((item) => (
+      <li class="menu-item">
+        <span class="item-name">{item.name}</span>
+        <span class="item-dots"></span>
+        <span class="item-price">€ {item.price}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .menu-category {
+    padding: var(--space-8);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .category-icon {
+    font-size: 1.8rem;
+  }
+
+  .category-name {
+    font-size: var(--text-xl);
+    color: var(--color-accent);
+    margin: 0;
+  }
+
+  .menu-items {
+    list-style: none;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: baseline;
+    padding: var(--space-2) 0;
+    gap: var(--space-2);
+  }
+
+  .menu-item:not(:last-child) {
+    border-bottom: 1px solid rgba(232, 216, 200, 0.5);
+  }
+
+  .item-name {
+    font-weight: 500;
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  .item-dots {
+    flex: 1;
+    border-bottom: 1px dotted var(--color-border);
+    min-width: 20px;
+    margin-bottom: 4px;
+  }
+
+  .item-price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: var(--text-lg);
+    white-space: nowrap;
+    font-family: var(--font-heading);
+  }
+</style>

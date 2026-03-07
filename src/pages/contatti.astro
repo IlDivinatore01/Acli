@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Contatti" 
+  description="Contatta il Circolo ACLI San Giuseppe di Bellinzago Novarese. Indirizzo, telefono, email e come raggiungerci."
+  currentPage="/contatti/"
+>
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-badge">📬 Contatti</span>
+      <h1>Vieni a<br/><span class="text-highlight">Trovarci</span></h1>
+      <p class="page-description">
+        Siamo nel cuore di Bellinzago Novarese. 
+        Passa a trovarci o contattaci per qualsiasi informazione.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="info-card card">
+            <div class="info-icon">📍</div>
+            <div>
+              <h3>Indirizzo</h3>
+              <p>Via Roma 15</p>
+              <p>28043 Bellinzago Novarese (NO)</p>
+            </div>
+          </div>
+
+          <div class="info-card card">
+            <div class="info-icon">📞</div>
+            <div>
+              <h3>Telefono</h3>
+              <p><a href="tel:+390321000000">0321 000 000</a></p>
+            </div>
+          </div>
+
+          <div class="info-card card">
+            <div class="info-icon">📧</div>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:info@aclibellinzago.it">info@aclibellinzago.it</a></p>
+            </div>
+          </div>
+
+          <div class="info-card card">
+            <div class="info-icon">📱</div>
+            <div>
+              <h3>Social</h3>
+              <a href="https://www.facebook.com/ACLIBellinzago" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Seguici su Facebook
+              </a>
+            </div>
+          </div>
+
+          <div class="info-card card hours-card">
+            <div class="info-icon">🕐</div>
+            <div>
+              <h3>Orari di Apertura</h3>
+              <div class="hours-table">
+                <div class="hours-row">
+                  <span class="day">Lunedì</span>
+                  <span class="time">Chiuso</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Martedì</span>
+                  <span class="time">Chiuso</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Mercoledì</span>
+                  <span class="time">20:30 - 00:30</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Giovedì</span>
+                  <span class="time">20:30 - 00:30</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Venerdì</span>
+                  <span class="time">20:30 - 02:00</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Sabato</span>
+                  <span class="time">17:00 - 02:00</span>
+                </div>
+                <div class="hours-row" style="align-items: flex-end;">
+                  <span class="day" style="align-self: flex-start; margin-top: 5px;">Domenica</span>
+                  <div style="display: flex; flex-direction: column; text-align: right; gap: 4px;">
+                    <span class="time">10:00 - 13:00</span>
+                    <span class="time">17:00 - 00:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container">
+          <div class="map-card card">
+            <h3>📍 Dove Siamo</h3>
+            <div class="map-wrapper">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11279.15879068428!2d8.612088!3d45.48!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786669d25b272a3%3A0x40f7d6a31e5a000!2sBellinzago%20Novarese%2C%20Province%20of%20Novara%2C%20Italy!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" 
+                width="100%" 
+                height="400" 
+                style="border:0; border-radius: var(--radius-lg);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mappa Circolo ACLI San Giuseppe - Bellinzago Novarese">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="directions-note card">
+            <h4>🚗 Come Raggiungerci</h4>
+            <p>
+              Il circolo si trova nel centro di Bellinzago Novarese, facilmente raggiungibile 
+              dalla SS32 del Lago Maggiore. Parcheggio disponibile nelle vicinanze.
+            </p>
+            <p>
+              <strong>In treno:</strong> Stazione di Bellinzago Novarese (linea Novara-Milano), 
+              a 5 minuti a piedi dal circolo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #2C1810 0%, #4A2C1A 50%, #3D2415 100%);
+    padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: 
+      radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
+      radial-gradient(circle at 75% 75%, white 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .page-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-5);
+    background: rgba(200, 135, 43, 0.15);
+    border: 1px solid rgba(200, 135, 43, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    color: var(--color-primary-light);
+    margin-bottom: var(--space-6);
+  }
+
+  .page-header h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-4);
+    position: relative;
+  }
+
+  .text-highlight {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+  }
+
+  .page-description {
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .info-card {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-6);
+    align-items: flex-start;
+  }
+
+  .info-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .info-card h3 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-1);
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+
+  .info-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-1);
+  }
+
+  .info-card a {
+    font-size: var(--text-sm);
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: #1877F2;
+    color: white !important;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+  }
+
+  .social-btn:hover {
+    background: #0E5FC0;
+    transform: translateY(-1px);
+    color: white;
+  }
+
+  .hours-table {
+    margin-top: var(--space-2);
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-1) 0;
+    font-size: var(--text-sm);
+    border-bottom: 1px solid var(--color-border);
+    gap: var(--space-4);
+  }
+
+  .hours-row:last-child {
+    border-bottom: none;
+  }
+
+  .day {
+    color: var(--color-text-muted);
+  }
+
+  .time {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .map-card {
+    padding: var(--space-6);
+  }
+
+  .map-card h3 {
+    margin-bottom: var(--space-4);
+  }
+
+  .map-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+  }
+
+  .directions-note {
+    margin-top: var(--space-4);
+    padding: var(--space-6);
+    background: var(--color-bg-warm);
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .directions-note h4 {
+    margin-bottom: var(--space-3);
+    font-family: var(--font-body);
+  }
+
+  .directions-note p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-2);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

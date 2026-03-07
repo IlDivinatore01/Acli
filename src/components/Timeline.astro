@@ -1,0 +1,157 @@
+---
+interface TimelineEvent {
+  year: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  events: TimelineEvent[];
+}
+
+const { events } = Astro.props;
+---
+
+<div class="timeline">
+  {events.map((event, i) => (
+    <div class={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
+      <div class="timeline-dot">
+        <span class="dot-inner"></span>
+      </div>
+      <div class="timeline-content card">
+        <span class="timeline-year">{event.year}</span>
+        <h3 class="timeline-title">{event.title}</h3>
+        <p class="timeline-description">{event.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-8) 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-primary-light) 10%,
+      var(--color-primary) 50%,
+      var(--color-primary-light) 90%,
+      transparent
+    );
+    transform: translateX(-50%);
+    border-radius: var(--radius-full);
+  }
+
+  .timeline-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--space-10);
+    width: 50%;
+  }
+
+  .timeline-item.left {
+    padding-right: var(--space-10);
+    justify-content: flex-end;
+    align-self: flex-start;
+  }
+
+  .timeline-item.right {
+    padding-left: var(--space-10);
+    margin-left: 50%;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--color-bg);
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline-item.left .timeline-dot {
+    right: -10px;
+  }
+
+  .timeline-item.right .timeline-dot {
+    left: -10px;
+  }
+
+  .dot-inner {
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+  }
+
+  .timeline-content {
+    max-width: 380px;
+    padding: var(--space-6);
+  }
+
+  .timeline-year {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-3);
+  }
+
+  .timeline-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+  }
+
+  .timeline-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+      width: 100%;
+      padding-left: 56px;
+      padding-right: 0;
+      margin-left: 0;
+      justify-content: flex-start;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+      left: 11px;
+      right: auto;
+    }
+
+    .timeline-content {
+      max-width: 100%;
+    }
+  }
+</style>

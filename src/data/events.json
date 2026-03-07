@@ -1,0 +1,137 @@
+{
+  "events": [
+    {
+      "name": "San Valentino al Circolo",
+      "date": "14 Febbraio 2025",
+      "month": "Febbraio",
+      "icon": "❤️",
+      "description": "Cena romantica a lume di candela con menù speciale per coppie. Musica dal vivo e brindisi finale.",
+      "tags": ["Cena", "Romantico"],
+      "prices": [
+        { "label": "Menù Completo", "amount": "35€" }
+      ],
+      "deposit": "15€ / persona",
+      "registrationStart": "20 Gennaio 2025",
+      "registrationEnd": "10 Febbraio 2025",
+      "flyers": ["/events/san-valentino.jpg"]
+    },
+    {
+      "name": "Carnevale al Circolo",
+      "date": "2 Marzo 2025",
+      "month": "Marzo",
+      "icon": "🎭",
+      "description": "Festa di Carnevale con maschere, musica e dolci tradizionali. Divertimento per grandi e piccini!",
+      "tags": ["Festa", "Famiglia"],
+      "flyers": ["/events/carnevale.jpg"]
+    },
+    {
+      "name": "San Patrizio",
+      "date": "17 Marzo 2025",
+      "month": "Marzo",
+      "icon": "🍀",
+      "description": "Serata a tema irlandese con birra verde, musica celtica e tanta allegria. Dress code: verde!",
+      "tags": ["Serata a Tema", "Musica"],
+      "registrationEnd": "15 Marzo 2025"
+    },
+    {
+      "name": "Pasquetta al Circolo",
+      "date": "21 Aprile 2025",
+      "month": "Aprile",
+      "icon": "🐣",
+      "description": "Pranzo comunitario di Pasquetta con grigliata, giochi all'aperto e tombola per i più piccoli.",
+      "tags": ["Pranzo", "Famiglia"],
+      "registrationStart": "1 Aprile 2025",
+      "registrationEnd": "18 Aprile 2025",
+      "flyers": ["/events/pasquetta.jpg"]
+    },
+    {
+      "name": "Degustazione Vini del Piemonte",
+      "date": "10 Maggio 2025",
+      "month": "Maggio",
+      "icon": "🍷",
+      "description": "Serata dedicata ai grandi vini piemontesi: Barolo, Barbaresco, Nebbiolo. Con tagliere di salumi e formaggi locali.",
+      "tags": ["Degustazione", "Enogastronomia"],
+      "prices": [
+        { "label": "Degustazione 4 Vini", "amount": "20€" },
+        { "label": "Degustazione 2 Vini", "amount": "15€" }
+      ],
+      "deposit": "10€",
+      "registrationStart": "20 Aprile 2025",
+      "registrationEnd": "8 Maggio 2025"
+    },
+    {
+      "name": "Festa d'Estate",
+      "date": "21 Giugno 2025",
+      "month": "Giugno",
+      "icon": "☀️",
+      "description": "Grande festa per l'arrivo dell'estate! Grigliata, DJ set, cocktail e balli sotto le stelle.",
+      "tags": ["Festa", "Musica", "Grigliata"],
+      "flyers": ["/events/festa-estate.jpg"]
+    },
+    {
+      "name": "Torneo di Briscola",
+      "date": "12 Luglio 2025",
+      "month": "Luglio",
+      "icon": "🃏",
+      "description": "Il tradizionale torneo di briscola estivo. Premi per i vincitori e rinfresco per tutti i partecipanti.",
+      "tags": ["Torneo", "Tradizione"],
+      "registrationEnd": "10 Luglio 2025"
+    },
+    {
+      "name": "Ferragosto Insieme",
+      "date": "15 Agosto 2025",
+      "month": "Agosto",
+      "icon": "🎆",
+      "description": "Cena di Ferragosto al circolo con menù speciale, cocomero e fuochi d'artificio a mezzanotte.",
+      "tags": ["Cena", "Festa"],
+      "prices": [
+        { "label": "Adulti", "amount": "25€" },
+        { "label": "Bambini sotto i 12 anni", "amount": "10€" }
+      ],
+      "registrationStart": "1 Agosto 2025",
+      "registrationEnd": "12 Agosto 2025"
+    },
+    {
+      "name": "Sagra d'Autunno",
+      "date": "18 Ottobre 2025",
+      "month": "Ottobre",
+      "icon": "🍂",
+      "description": "Castagne, vin brulé e piatti della tradizione autunnale. Musica dal vivo e mercatino artigianale.",
+      "tags": ["Sagra", "Enogastronomia"]
+    },
+    {
+      "name": "Halloween Night",
+      "date": "31 Ottobre 2025",
+      "month": "Ottobre",
+      "icon": "🎃",
+      "description": "Serata di Halloween con decorazioni spaventose, cocktail a tema e concorso di maschere.",
+      "tags": ["Serata a Tema", "Festa"],
+      "flyers": ["/events/halloween.jpg"]
+    },
+    {
+      "name": "Tombola di Natale",
+      "date": "22 Dicembre 2025",
+      "month": "Dicembre",
+      "icon": "🎄",
+      "description": "La grande tombola natalizia con ricchi premi! Panettone, pandoro e vin brulé per tutti.",
+      "tags": ["Tombola", "Famiglia", "Natale"],
+      "registrationEnd": "20 Dicembre 2025"
+    },
+    {
+      "name": "Capodanno al Circolo",
+      "date": "31 Dicembre 2025",
+      "month": "Dicembre",
+      "icon": "🥂",
+      "description": "Cenone di Capodanno, cotechino e lenticchie, brindisi di mezzanotte e DJ set fino all'alba!",
+      "tags": ["Cena", "Festa", "Musica"],
+      "prices": [
+        { "label": "Cenone + Serata", "amount": "50€" },
+        { "label": "Solo Serata (dopo le 23)", "amount": "15€" }
+      ],
+      "deposit": "20€ / persona",
+      "registrationStart": "1 Dicembre 2025",
+      "registrationEnd": "28 Dicembre 2025",
+      "flyers": ["/events/capodanno.jpg"]
+    }
+  ]
+}

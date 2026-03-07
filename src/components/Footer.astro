@@ -1,0 +1,247 @@
+---
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,40 C360,100 720,0 1080,60 C1260,90 1380,40 1440,50 L1440,100 L0,100 Z" fill="var(--color-bg-dark)"/>
+    </svg>
+  </div>
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <span class="footer-brand-icon">🏠</span>
+            <div>
+              <h3>Circolo ACLI</h3>
+              <p class="footer-brand-sub">San Giuseppe</p>
+            </div>
+          </div>
+          <p class="footer-description">
+            Un luogo dove vivere il tempo libero. Dal cuore di Bellinzago Novarese, il vostro circolo di riferimento.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pagine</h4>
+          <ul>
+            <li><a href={`${base}`}>Home</a></li>
+            <li><a href={`${base}menu/`}>Menu</a></li>
+            <li><a href={`${base}eventi/`}>Eventi</a></li>
+            <li><a href={`${base}storia/`}>La Nostra Storia</a></li>
+            <li><a href={`${base}team/`}>Il Team</a></li>
+            <li><a href={`${base}contatti/`}>Contatti</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul class="footer-contacts">
+            <li>
+              <span class="contact-icon">📍</span>
+              <span>Via Roma 15, Bellinzago Novarese (NO)</span>
+            </li>
+            <li>
+              <span class="contact-icon">📞</span>
+              <a href="tel:+390321000000">0321 000 000</a>
+            </li>
+            <li>
+              <span class="contact-icon">📧</span>
+              <a href="mailto:info@aclibellinzago.it">info@aclibellinzago.it</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Seguici</h4>
+          <a href="https://www.facebook.com/ACLIBellinzago" target="_blank" rel="noopener noreferrer" class="social-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span>Facebook</span>
+          </a>
+          <div class="footer-hours">
+            <h5>Orari</h5>
+            <p>Lun - Mar: Chiuso</p>
+            <p>Mer - Gio: 20:30 - 00:30</p>
+            <p>Ven: 20:30 - 02:00</p>
+            <p>Sab: 17:00 - 02:00</p>
+            <p>Dom: 10:00 - 13:00 / 17:00 - 00:00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; {currentYear} Circolo ACLI "San Giuseppe" — Bellinzago Novarese. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    margin-top: var(--space-16);
+  }
+
+  .footer-wave {
+    position: relative;
+    margin-bottom: -2px;
+  }
+
+  .footer-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+  }
+
+  .footer-content {
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+    padding: var(--space-12) 0 var(--space-8);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--space-10);
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-brand-icon {
+    font-size: 2rem;
+  }
+
+  .footer-brand h3 {
+    color: var(--color-primary-light);
+    font-size: var(--text-xl);
+    margin: 0;
+  }
+
+  .footer-brand-sub {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-description {
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+
+  .footer-col h4 {
+    color: var(--color-primary-light);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-col ul {
+    list-style: none;
+  }
+
+  .footer-col ul li {
+    margin-bottom: var(--space-2);
+  }
+
+  .footer-col ul a {
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-sm);
+    transition: color var(--transition-fast);
+    text-decoration: none;
+  }
+
+  .footer-col ul a:hover {
+    color: var(--color-primary-light);
+  }
+
+  .footer-contacts li {
+    display: flex;
+    gap: var(--space-2);
+    align-items: flex-start;
+    font-size: var(--text-sm);
+    color: rgba(245, 237, 230, 0.7);
+  }
+
+  .contact-icon {
+    flex-shrink: 0;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: rgba(245, 237, 230, 0.7);
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+  }
+
+  .social-link:hover {
+    color: white;
+    background: #1877F2;
+    border-color: #1877F2;
+  }
+
+  .footer-hours {
+    margin-top: var(--space-6);
+  }
+
+  .footer-hours h5 {
+    color: var(--color-primary-light);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-2);
+  }
+
+  .footer-hours p {
+    font-size: var(--text-sm);
+    color: rgba(245, 237, 230, 0.7);
+    margin-bottom: var(--space-1);
+  }
+
+  .footer-bottom {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border-dark);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: var(--text-xs);
+    color: rgba(245, 237, 230, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
