@@ -162,9 +162,10 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
   }
 
   .membership-card {
-    background: var(--color-bg-warm);
-    border: 2px solid var(--color-primary-light);
-    padding: var(--space-8);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-4);
     text-align: center;
   }
 
@@ -174,33 +175,33 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
   }
 
   .membership-icon {
-    font-size: 3.5rem;
-    margin-bottom: var(--space-4);
+    font-size: 2.5rem;
+    margin-bottom: var(--space-2);
   }
 
   .membership-desc {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-8);
-    color: var(--color-text);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-6);
+    color: var(--color-text-muted);
   }
 
   .membership-prices {
     display: flex;
     justify-content: center;
-    gap: var(--space-6);
-    margin-bottom: var(--space-8);
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
     flex-wrap: wrap;
   }
 
   .price-badge {
-    background: white;
-    padding: var(--space-4) var(--space-6);
+    background: var(--color-bg);
+    padding: var(--space-3) var(--space-5);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
-    min-width: 200px;
+    min-width: 180px;
   }
 
   .price-label {
