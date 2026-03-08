@@ -21,7 +21,7 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
 <nav class="navbar" id="navbar">
   <div class="navbar-container container">
     <a href={`${base}`} class="navbar-brand">
-      <span class="brand-icon">🏠</span>
+      <img src={`${base}logo.png`} alt="Logo Circolo ACLI" class="brand-icon" width="40" height="40" />
       <div class="brand-text">
         <span class="brand-name">Circolo ACLI</span>
         <span class="brand-sub">San Giuseppe</span>
@@ -119,7 +119,14 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
   }
 
   .brand-icon {
-    font-size: 1.8rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  :global([data-theme="dark"]) .brand-icon {
+    filter: invert(1);
   }
 
   .brand-text {

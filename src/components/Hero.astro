@@ -12,10 +12,9 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
     <div class="hero-badge animate-fade-in-up">
       <span>📍 Bellinzago Novarese</span>
     </div>
-    <h1 class="hero-title animate-fade-in-up stagger-1">
-      Circolo ACLI<br/>
-      <span class="hero-highlight">"San Giuseppe"</span>
-    </h1>
+    <div class="hero-logo animate-fade-in-up stagger-1">
+      <img src={`${base}logo-wide-web.png`} alt="Circolo ACLI San Giuseppe Bellinzago" class="hero-logo-img" />
+    </div>
     <p class="hero-subtitle animate-fade-in-up stagger-2">
       Un luogo dove vivere il tempo libero.<br/>
       Tradizione, comunità e convivialità dal cuore del Piemonte.
@@ -111,19 +110,16 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
     margin-bottom: var(--space-8);
   }
 
-  .hero-title {
-    font-size: var(--text-6xl);
-    color: var(--color-text-light);
+  .hero-logo {
     margin-bottom: var(--space-6);
-    letter-spacing: -0.02em;
+    text-align: center;
   }
 
-  .hero-highlight {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-style: italic;
+  .hero-logo-img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    filter: invert(1);
   }
 
   .hero-subtitle {
@@ -219,8 +215,8 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
   }
 
   @media (max-width: 768px) {
-    .hero-title {
-      font-size: var(--text-4xl);
+    .hero-logo-img {
+      max-width: 350px;
     }
 
     .hero-subtitle {
@@ -246,8 +242,8 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
   }
 
   @media (max-width: 480px) {
-    .hero-title {
-      font-size: var(--text-3xl);
+    .hero-logo-img {
+      max-width: 280px;
     }
     .hero-cta {
       flex-direction: column;

@@ -15,7 +15,7 @@ const currentYear = new Date().getFullYear();
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-brand">
-            <span class="footer-brand-icon">🏠</span>
+            <img src={`${base}logo.png`} alt="Logo Circolo ACLI" class="footer-brand-icon" width="40" height="40" />
             <div>
               <h3>Circolo ACLI</h3>
               <p class="footer-brand-sub">San Giuseppe</p>
@@ -125,7 +125,11 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-brand-icon {
-    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: invert(1);
   }
 
   .footer-brand h3 {
