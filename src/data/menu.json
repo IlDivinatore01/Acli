@@ -4,38 +4,18 @@
       "name": "Caffetteria",
       "icon": "☕",
       "items": [
-        {
-          "name": "Caffè Espresso",
-          "price": "1.00"
-        },
-        {
-          "name": "Caffè Decaffeinato",
-          "price": "1.00"
-        },
-        {
-          "name": "Caffè Macchiato",
-          "price": "1.00"
-        },
-        {
-          "name": "Caffè Ginseng",
-          "price": "1.50"
-        },
-        {
-          "name": "Caffè Corretto",
-          "price": "1.30"
-        },
-        {
-          "name": "Cappuccino",
-          "price": "1.50"
-        },
-        {
-          "name": "Cioccolata Calda",
-          "price": "2.50"
-        },
-        {
-          "name": "Tè / Tisane",
-          "price": "2.00"
-        }
+        { "name": "Caffè Espresso", "price": "1.00" },
+        { "name": "Caffè Decaffeinato", "price": "1.00" },
+        { "name": "Caffè Macchiato", "price": "1.00" },
+        { "name": "Caffè Ginseng", "price": "1.50" },
+        { "name": "Caffè Corretto", "price": "1.30" },
+        { "name": "Caffè Shakerato", "price": "2.50" },
+        { "name": "Cappuccino", "price": "1.50" },
+        { "name": "Cioccolata", "price": "2.00" },
+        { "name": "Bombardino", "price": "3.00" },
+        { "name": "Irish Coffee", "price": "3.00" },
+        { "name": "Tè / Tisana / Camomilla", "price": "1.50" },
+        { "name": "Degu Tisane", "price": "10.00" }
       ]
     },
     {
@@ -49,10 +29,7 @@
             "Media (50cl)": "4.00"
           }
         },
-        {
-          "name": "Hobgoblin IPA (40cl)",
-          "price": "4.50"
-        },
+        { "name": "Hobgoblin IPA (40cl)", "price": "4.50" },
         {
           "name": "Guinness",
           "price": {
@@ -67,10 +44,7 @@
             "Media (50cl)": "5.00"
           }
         },
-        {
-          "name": "Leffe Rossa (33cl)",
-          "price": "5.50"
-        }
+        { "name": "Leffe Rossa (33cl)", "price": "5.50" }
       ]
     },
     {
@@ -78,153 +52,129 @@
       "icon": "🍻",
       "items": [
         {
-          "name": "Moretti (33cl)",
-          "price": "3.00"
+          "name": "Birra Bottiglia",
+          "price": {
+            "Standard": "3.00",
+            "Punk": "4.00"
+          }
         },
-        {
-          "name": "Peroni (33cl)",
-          "price": "3.00"
-        },
-        {
-          "name": "Corona (33cl)",
-          "price": "4.00"
-        },
-        {
-          "name": "Heineken (33cl)",
-          "price": "3.50"
-        },
-        {
-          "name": "Ceres (33cl)",
-          "price": "4.00"
-        }
+        { "name": "Moretti (33cl)", "price": "3.00" },
+        { "name": "Peroni (33cl)", "price": "3.00" },
+        { "name": "Corona (33cl)", "price": "4.00" },
+        { "name": "Heineken (33cl)", "price": "3.50" },
+        { "name": "Ceres (33cl)", "price": "4.00" }
       ]
     },
     {
-      "name": "Vini",
+      "name": "Vini & Aperitivi Classici",
       "icon": "🍷",
       "items": [
-        {
-          "name": "Calice di Rosso della Casa",
-          "price": "2.50"
+        { "name": "Calice Vino Rosso", "price": "4.00" },
+        { "name": "Calice Vino Bianco", "price": "4.00" },
+        { "name": "Bottiglia Rosso della Casa", "price": "10.00" },
+        { "name": "Bottiglia Bianco della Casa", "price": "10.00" },
+        { "name": "Prosecco", "price": "3.50" },
+        { 
+          "name": "Spritz (Aperol/Campari/Hugo)", 
+          "price": {
+            "Piccolo": "3.00",
+            "Standard": "4.00"
+          }
         },
+        { "name": "Campari + Bianco", "price": "3.00" },
+        { "name": "Camparino", "price": "2.50" },
+        { "name": "Mistino", "price": "1.00" }
+      ]
+    },
+    {
+      "name": "Cocktail",
+      "icon": "🍹",
+      "items": [
+        { "name": "Negroni", "price": "5.00" },
         {
-          "name": "Calice di Bianco della Casa",
-          "price": "2.50"
+          "name": "Negroni Sbagliato",
+          "price": {
+            "Piccolo": "4.00",
+            "Normale": "5.00"
+          }
         },
+        { "name": "Americano", "price": "4.50" },
+        { "name": "Gin Tonic", "price": "5.00" },
+        { "name": "Moscow Mule", "price": "4.50" },
+        { "name": "Mojito", "price": "5.00" },
         {
-          "name": "Bottiglia Rosso della Casa",
-          "price": "10.00"
-        },
-        {
-          "name": "Bottiglia Bianco della Casa",
-          "price": "10.00"
-        },
-        {
-          "name": "Prosecco (calice)",
-          "price": "3.00"
-        },
-        {
-          "name": "Spritz Aperol",
-          "price": "3.50"
-        },
-        {
-          "name": "Spritz Campari",
-          "price": "3.50"
+          "name": "Cuba",
+          "price": {
+            "Standard": "4.00",
+            "Pestato": "5.00"
+          }
         }
       ]
     },
     {
-      "name": "Cocktail & Aperitivi",
-      "icon": "🍹",
+      "name": "Amari & Distillati",
+      "icon": "🥃",
       "items": [
+        { "name": "Amari", "price": "3.00" },
+        { "name": "Braulio Riserva", "price": "4.00" },
         {
-          "name": "Negroni",
-          "price": "5.00"
+          "name": "Gin",
+          "price": {
+            "Piccolo": "5.00",
+            "Bickens": "5.00",
+            "Tanqueray": "6.00",
+            "Premium": "7.00 - 8.00"
+          }
         },
         {
-          "name": "Americano",
-          "price": "4.50"
+          "name": "Grappa",
+          "price": {
+            "Beccaccia": "3.00",
+            "Barricata": "3.50"
+          }
         },
+        { "name": "Rum", "price": "3.00" },
         {
-          "name": "Gin Tonic",
-          "price": "5.00"
+          "name": "Whiskey",
+          "price": {
+            "Standard": "3.50",
+            "Talisker": "4.00",
+            "Laphroaig": "4.00"
+          }
         },
-        {
-          "name": "Moscow Mule",
-          "price": "5.50"
-        },
-        {
-          "name": "Campari Soda",
-          "price": "3.00"
-        },
-        {
-          "name": "Crodino",
-          "price": "2.50"
-        },
-        {
-          "name": "Bitter Analcolico",
-          "price": "2.50"
-        }
+        { "name": "Shottino", "price": "2.00" }
       ]
     },
     {
       "name": "Analcolici",
       "icon": "🥤",
       "items": [
-        {
-          "name": "Coca Cola / Fanta / Sprite",
-          "price": "2.50"
-        },
-        {
-          "name": "Succo di Frutta",
-          "price": "2.50"
-        },
-        {
-          "name": "Acqua Naturale (50cl)",
-          "price": "1.00"
-        },
-        {
-          "name": "Acqua Frizzante (50cl)",
-          "price": "1.00"
-        },
-        {
-          "name": "Red Bull",
-          "price": "3.50"
-        },
-        {
-          "name": "Chinotto",
-          "price": "2.50"
-        }
+        { "name": "Acqua Naturale (50cl)", "price": "1.00" },
+        { "name": "Acqua Frizzante (50cl)", "price": "1.00" },
+        { "name": "Bibite Lattina", "price": "2.00" },
+        { "name": "Cedrata", "price": "1.00" },
+        { "name": "Ginger", "price": "1.00" },
+        { "name": "Succhi di Frutta", "price": "2.00" },
+        { "name": "Red Bull", "price": "2.50" },
+        { "name": "Chinotto", "price": "2.50" },
+        { "name": "Campari Soda", "price": "3.00" },
+        { "name": "Crodino", "price": "2.00" },
+        { "name": "Crodino Plus", "price": "2.50" },
+        { "name": "Crodone", "price": "3.00" },
+        { "name": "Bitter Analcolico", "price": "2.50" },
+        { "name": "Cocktail Analcolici", "price": "4.00" }
       ]
     },
     {
       "name": "Stuzzicheria",
       "icon": "🥜",
       "items": [
-        {
-          "name": "Patatine",
-          "price": "2.00"
-        },
-        {
-          "name": "Noccioline",
-          "price": "2.00"
-        },
-        {
-          "name": "Olive",
-          "price": "2.50"
-        },
-        {
-          "name": "Tagliere Salumi e Formaggi",
-          "price": "8.00"
-        },
-        {
-          "name": "Toast Prosciutto e Formaggio",
-          "price": "3.00"
-        },
-        {
-          "name": "Panino Farcito",
-          "price": "4.00"
-        }
+        { "name": "Patatine", "price": "2.00" },
+        { "name": "Noccioline", "price": "2.00" },
+        { "name": "Olive", "price": "2.50" },
+        { "name": "Tagliere Salumi e Formaggi", "price": "8.00" },
+        { "name": "Toast Prosciutto e Formaggio", "price": "3.00" },
+        { "name": "Panino Farcito", "price": "4.00" }
       ]
     }
   ]
