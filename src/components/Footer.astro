@@ -113,7 +113,7 @@ const currentYear = new Date().getFullYear();
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1.2fr 0.8fr;
     gap: var(--space-10);
   }
 
@@ -268,6 +268,11 @@ const currentYear = new Date().getFullYear();
   @media (max-width: 480px) {
     .footer-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .footer-contacts li span,
+    .footer-contacts li a {
+      font-size: 13px;
     }
   }
 </style>

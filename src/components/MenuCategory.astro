@@ -2,7 +2,10 @@
 interface Props {
   name: string;
   icon: string;
-  items: { name: string; price: string }[];
+  items: { 
+    name: string; 
+    price: string | Record<string, string>;
+  }[];
 }
 
 const { name, icon, items } = Astro.props;
@@ -18,7 +21,18 @@ const { name, icon, items } = Astro.props;
       <li class="menu-item">
         <span class="item-name">{item.name}</span>
         <span class="item-dots"></span>
-        <span class="item-price">€ {item.price}</span>
+        {typeof item.price === 'string' ? (
+          <span class="item-price">€ {item.price}</span>
+        ) : (
+          <div class="multi-prices">
+            {Object.entries(item.price).map(([size, price]) => (
+              <div class="multi-price-item">
+                <span class="price-size">{size}</span>
+                <span class="item-price">€ {price}</span>
+              </div>
+            ))}
+          </div>
+        )}
       </li>
     ))}
   </ul>
@@ -82,5 +96,25 @@ const { name, icon, items } = Astro.props;
     font-size: var(--text-lg);
     white-space: nowrap;
     font-family: var(--font-heading);
+  }
+  .multi-prices {
+    display: flex;
+    gap: var(--space-4);
+    align-items: baseline;
+  }
+
+  .multi-price-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+  }
+
+  .price-size {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    font-weight: 600;
   }
 </style>
