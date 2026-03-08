@@ -4,46 +4,31 @@ import Timeline from '../components/Timeline.astro';
 
 const events = [
   {
-    year: "1968",
+    year: "1950",
     title: "La Fondazione",
-    description: "Nasce il Circolo ACLI \"San Giuseppe\" a Bellinzago Novarese, voluto da un gruppo di lavoratori e volontari cattolici con l'obiettivo di creare un luogo di aggregazione per la comunità."
+    description: "Nasce il Circolo ACLI \"San Giuseppe\" a Bellinzago Novarese. I suoi pilastri storici fin dal principio sono il bar e l'annessa storica bocciofila, diventando un importante punto di ritrovo della comunità."
   },
   {
-    year: "1975",
-    title: "La Nuova Sede",
-    description: "Il circolo si trasferisce nella sede attuale in Via Roma, con spazi più ampi per ospitare le crescenti attività ricreative e culturali."
-  },
-  {
-    year: "1985",
-    title: "Anni di Crescita",
-    description: "Il circolo diventa punto di riferimento per la comunità bellinzaghese: tornei di carte, feste patronali e iniziative solidali caratterizzano questo periodo."
-  },
-  {
-    year: "1995",
-    title: "Rinnovamento del Bar",
-    description: "Viene completamente rinnovato il bar e la sala principale, rendendo il circolo più accogliente e moderno pur mantenendo il suo spirito tradizionale."
-  },
-  {
-    year: "2005",
-    title: "40 Anni Insieme",
-    description: "Grande festa per i 40 anni del circolo con tutta la comunità. Un momento per celebrare la storia e guardare al futuro con ottimismo."
-  },
-  {
-    year: "2015",
-    title: "L'Era Digitale",
-    description: "Il circolo approda sui social media con la pagina Facebook, raggiungendo sempre più persone e promuovendo eventi e attività online."
+    year: "Anni '90 - 2000",
+    title: "L'Evoluzione",
+    description: "Con il calo d'interesse per le bocce, il circolo si reinventa e si apre sempre di più. Iniziano a essere proposte attività laboratoriali, ludiche ed eventi rivolti a bambini e famiglie."
   },
   {
     year: "Oggi",
-    title: "Un Futuro di Comunità",
-    description: "Oltre 50 anni di storia non ci fermano: il Circolo ACLI San Giuseppe continua a essere il cuore pulsante della vita sociale di Bellinzago Novarese."
+    title: "Il Ricambio Generazionale",
+    description: "Sotto nuove guide, nascono gli \"Aperitivisti\" (giovani under-25 che gestiscono i buffet) e si moltiplicano iniziative come Game Night, Aperitivi Musicali, Silent Disco e degustazioni."
+  },
+  {
+    year: "2025",
+    title: "I 75 Anni di Storia",
+    description: "Il circolo festeggia orgogliosamente 75 anni di attività con mostre storiche e la caccia al tesoro \"Aclicatrace\". Oggi è una vera istituzione intergenerazionale capace di unire tradizione e modernità."
   }
 ];
 ---
 
 <BaseLayout 
   title="La Nostra Storia" 
-  description="Scopri la storia del Circolo ACLI San Giuseppe di Bellinzago Novarese, dal 1968 ad oggi."
+  description="Scopri la storia del Circolo ACLI San Giuseppe di Bellinzago Novarese, dal 1950 ad oggi, tra tradizioni, bocce e linguaggi contemporanei."
   currentPage="/storia/"
 >
   <!-- Page Header -->
@@ -52,8 +37,8 @@ const events = [
       <span class="page-badge">📜 La Nostra Storia</span>
       <h1>Una Storia di<br/><span class="text-highlight">Comunità</span></h1>
       <p class="page-description">
-        Oltre 50 anni di tradizione, amicizia e impegno sociale 
-        nel cuore di Bellinzago Novarese.
+        Dal 1950, una vera "fabbrica di ricordi" capace di unire 
+        tradizione, amicizia e intergenerazionalità a Bellinzago.
       </p>
     </div>
   </section>
@@ -65,30 +50,28 @@ const events = [
         <div class="intro-content">
           <h2>Chi Siamo</h2>
           <p>
-            Il <strong>Circolo ACLI "San Giuseppe"</strong> è un'associazione di promozione sociale 
-            che fa parte delle <strong>ACLI</strong> (Associazioni Cristiane Lavoratori Italiani). 
-            Dal 1968 siamo un punto di riferimento per la comunità di Bellinzago Novarese, 
-            offrendo un luogo accogliente dove trascorrere il tempo libero, socializzare e 
-            partecipare a iniziative culturali e ricreative.
+            Il <strong>Circolo ACLI "San Giuseppe" di Bellinzago Novarese</strong> è una vera e propria istituzione per la comunità locale. 
+            Nato nel <strong>1950</strong> come tradizionale ritrovo legato alla storica bocciofila e frequentato originariamente da anziani, 
+            ha saputo trasformarsi nel tempo diventando uno spazio di aggregazione dinamico, intergenerazionale e molto frequentato anche dai giovani.
           </p>
           <p>
-            Il nostro circolo è aperto a tutti: famiglie, giovani, anziani. 
-            Crediamo nella forza della comunità e nell'importanza di avere 
-            spazi dove le persone possano incontrarsi e condividere momenti insieme.
+            Oggi il nostro circolo unisce le sue profonde radici sociali e solidali (tipiche delle ACLI) a un'offerta contemporanea: 
+            dalle storiche partite a carte alle <em>Game Night</em> con giochi da tavolo, dagli Aperitivi Musicali e <em>VenerdìVino</em> 
+            agli eventi dedicati a famiglie e bambini. Una vera "fabbrica di ricordi" dove la tradizione incontra chi guarda al futuro.
           </p>
         </div>
         <div class="intro-stats">
           <div class="stat-item">
-            <span class="stat-number">50+</span>
+            <span class="stat-number">75</span>
             <span class="stat-label">Anni di storia</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">2000+</span>
-            <span class="stat-label">Soci e amici</span>
+            <span class="stat-number">700+</span>
+            <span class="stat-label">Tesserati</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">365</span>
-            <span class="stat-label">Giorni di attività</span>
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Passione e Comunità</span>
           </div>
         </div>
       </div>
