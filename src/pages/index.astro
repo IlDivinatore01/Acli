@@ -39,6 +39,35 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
     </div>
   </section>
 
+  <!-- Membership Section -->
+  <section class="section membership-section">
+    <div class="container">
+      <div class="membership-card card">
+        <div class="membership-content">
+          <div class="membership-icon">🪪</div>
+          <h2>Diventa Socio ACLI</h2>
+          <p class="membership-desc">
+            Il Circolo ACLI San Giuseppe è un'associazione: l'accesso ai locali, la consumazione al bar e la partecipazione agli eventi <strong>sono strettamente riservati ai soci tesserati</strong>.
+          </p>
+          <div class="membership-prices">
+            <div class="price-badge">
+              <span class="price-label">Tessera Ordinaria</span>
+              <span class="price-value">10€ <small>/ anno</small></span>
+            </div>
+            <div class="price-badge">
+              <span class="price-label">Tessera Familiare</span>
+              <span class="price-value">7€ <small>/ anno</small></span>
+              <span class="price-subtext">(per chi ha già un familiare tesserato)</span>
+            </div>
+          </div>
+          <p class="membership-note">
+            <em>💡 Il tesseramento ha validità per l'intero anno solare e può essere comodamente effettuato in loco alla tua prima visita!</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
@@ -128,10 +157,92 @@ const base = rawBase.endsWith('/') ? rawBase : rawBase + '/';
     flex-wrap: wrap;
   }
 
+  .membership-section {
+    padding-top: 0;
+  }
+
+  .membership-card {
+    background: var(--color-bg-warm);
+    border: 2px solid var(--color-primary-light);
+    padding: var(--space-8);
+    text-align: center;
+  }
+
+  .membership-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .membership-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .membership-desc {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+    color: var(--color-text);
+  }
+
+  .membership-prices {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+  }
+
+  .price-badge {
+    background: white;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 200px;
+  }
+
+  .price-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .price-value {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+  }
+
+  .price-value small {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .price-subtext {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+
+  .membership-note {
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+  }
+
   @media (max-width: 768px) {
     .welcome-grid {
       grid-template-columns: 1fr;
       gap: var(--space-6);
+    }
+    
+    .membership-prices {
+      flex-direction: column;
     }
   }
 </style>

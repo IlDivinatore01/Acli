@@ -28,6 +28,11 @@ import eventsData from '../data/events.json';
       <p class="section-subtitle">
         Feste, degustazioni, tornei e serate a tema per tutti i gusti. Non perderti neanche un evento!
       </p>
+
+      <div class="events-note card" style="margin-bottom: var(--space-8); padding: var(--space-5); border-left: 4px solid var(--color-primary); background: var(--color-bg-warm);">
+        <p style="margin: 0;">🪪 <strong>Riservato ai Soci:</strong> La partecipazione agli eventi è strettamente riservata ai tesserati ACLI. La tessera ha validità annuale (10€ ordinaria, 7€ familiare) ed è sottoscrivibile comodamente in loco.</p>
+      </div>
+
       <div class="events-grid">
         {eventsData.events.map((event) => (
           <EventCard 
